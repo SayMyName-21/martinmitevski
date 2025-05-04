@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Zad10</title>
+    <script src="https://cdn.plot.ly/plotly-3.0.1.min.js"></script>
+</head>
+
+<body>
+
+Company: <select id="company">
+    <option value="a">Amstel</option>
+    <option value="h">Heineken</option>
+</select>
+Month: <select id="month">
+    <option value="Jan">January</option>
+    <option value="Feb">February</option>
+    <option value="Mar">March</option>
+    <option value="Apr">April</option>
+    <option value="May">May</option>
+    <option value="Jun">June</option>
+    <option value="Jul">July</option>
+    <option value="Aug">August</option>
+    <option value="Sep">September</option>
+    <option value="Oct">October</option>
+    <option value="Nov">November</option>
+    <option value="Dec">December</option>
+</select>
+New Sales: <input type="number" id="newSales">
+<button onclick="updateSales()">Update Sales</button>
+
+<div id="plot"></div>
+
+<script>
+
+    const months = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"]
+
+    const Amstel_sales = months.map(() => Math.floor(Math.random() * (10000 - 1000 + 1)) + 1000)
+    const Heineken_sales = months.map(() => Math.floor(Math.random() * (10000 - 1000 + 1)) + 1000)
+
+    const dataA = {
+        x: months,
+        y: Amstel_sales,
+        name: 'Amstel',
+        type: 'bar',
+        marker: {color: 'orange'}
+    }
+
+    const dataH = {
+        x: months,
+        y: Heineken_sales,
+        name: 'Heineken',
+        type: 'bar',
+        marker: {color: 'green'}
+    }
+
+    data = [dataA, dataH]
+
+    const layout = {
+        barmode: 'group'
+    }
+
+    Plotly.newPlot("plot", data, layout)
+
+    function updateSales() {
+        const company = document.getElementById("company").value
+        const month = document.getElementById("month").value
+        const newSales = parseInt(document.getElementById("newSales").value)
+
+        const monthIndex = months.indexOf(month)
+
+        if (company.toLowerCase() === "a") {
+            Amstel_sales[monthIndex] = newSales
+        } else if (company.toLowerCase() === "h") {
+            Heineken_sales[monthIndex] = newSales
+        }
+        Plotly.update("plot", {y: [Amstel_sales, Heineken_sales]}, {}, [0,1])
+    }
+
+</script>
+</body>
+</html>

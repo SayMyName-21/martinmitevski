@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.plot.ly/plotly-3.0.1.min.js"></script>
+</head>
+
+<body>
+
+Name: <input type="text" id="name">
+<button onclick="Add()">Add</button>
+
+<div id="plot"></div>
+
+</body>
+<script>
+
+    names = []
+    times = []
+
+    function Add() {
+
+        name = document.getElementById("name").value
+        names.push(name)
+        times.push(Math.floor(Math.random() * (1200 - 500 + 1)) + 500)
+
+        let sum = times.reduce((a, b) => a + b, 0)
+
+        let layout = {
+            xaxis: {
+                title: "Ime na trkac",
+                tickfont: {color: "yellow"},
+            },
+            yaxis: {
+                title: {text: "Vreme vo milisekundi"},
+                tickfont: {color: "blue"},
+            },
+            barmode: 'group',
+        }
+
+        let color
+
+        if (names.length >= 10) {
+            if (sum >= 10000) {
+                layout.bargap = 0.2
+                layout.barmode = 'stack'
+                layout.orientation = 'v'
+                color = "green"
+            } else {
+                layout.orientation = 'h'
+                color = "red"
+            }
+
+            let data = {
+                x: names,
+                y: times,
+                type: 'bar',
+                marker: {
+                    color: color
+                },
+                orientation: (layout.orientation === 'h') ? 'h' : 'v'
+            }
+
+            Plotly.newPlot('plot', data, layout)
+        }
+    }
+</script>
+</html>

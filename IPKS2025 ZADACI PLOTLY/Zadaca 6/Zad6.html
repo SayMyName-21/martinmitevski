@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.plot.ly/plotly-3.0.1.min.js"></script>
+</head>
+
+
+<body>
+
+Year: <input type="text" id="year">
+<br>
+Number of Flights: <input type="text" id="flight">
+<br>
+<button onclick="Bubble()">Add</button>
+
+<div id="plot"></div>
+
+</body>
+
+<script>
+    let years = []
+    let flights = []
+
+    function Bubble() {
+        if (isNaN(parseInt(document.getElementById("year").value)) || isNaN(parseInt(document.getElementById("flight").value))) {
+            return alert("ne e broj")
+        }
+        if (parseInt(document.getElementById("year").value) < 2001 || parseInt(document.getElementById("year").value) > 2030) {
+            return alert("nevalidna godina")
+        }
+        if (years.includes(document.getElementById("year").value)) {
+            return alert("veke e vnesesna godinata.")
+        }
+        years.push(document.getElementById("year").value)
+        flights.push(document.getElementById("flight").value)
+
+        const data = {
+            x: years,
+            y: flights,
+            mode: 'markers',
+        };
+
+        var layout = {
+            title: {
+                text: 'Marker Size'
+            },
+            showlegend: false,
+            height: 600,
+            width: 600
+        };
+
+
+        Plotly.newPlot('plot', data);
+    }
+
+</script>
+
+</html>

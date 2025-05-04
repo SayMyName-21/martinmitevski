@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.plot.ly/plotly-3.0.1.min.js"></script>
+</head>
+
+<body>
+
+Game: <input type="text" id="game">
+<br>
+<button onclick="Addition()">Add</button>
+<button onclick="Deletion()">Remove</button>
+
+<div id="plot"></div>
+
+
+</body>
+
+<script>
+
+    games = prompt("Vnesi igri oddeleni so zapirka").split(",")
+    sales = []
+
+    for (let i = 0; i < games.length; i++) {
+        sales[i] = Math.floor(Math.random() * (100 - 50 + 1)) + 50
+    }
+    makeGraph()
+
+    function makeGraph() {
+        const data = [{
+            labels: games,
+            values: sales,
+            type: "pie"
+        }]
+
+        Plotly.newPlot("plot", data);
+    }
+
+    function Addition() {
+        game = document.getElementById("game").value
+        if (games.includes(game)) {
+            return alert("Veke postoi igrata vo chartot")
+        }
+        games.push(game)
+        sales.push(Math.floor(Math.random() * (100 - 50 + 1)) + 50)
+
+        makeGraph()
+    }
+
+    function Deletion() {
+        if (games.length <= 2)
+        {
+            return alert("Ne e vozmozno brisenje na igra")
+        }
+
+        game = document.getElementById("game").value
+        if (!games.includes(game)) {
+            return alert("Ne postoi igrata")
+        }
+        sales.splice(games.indexOf(game), 1)
+        games.splice(games.indexOf(game), 1)
+
+        makeGraph()
+    }
+
+</script>
+</html>

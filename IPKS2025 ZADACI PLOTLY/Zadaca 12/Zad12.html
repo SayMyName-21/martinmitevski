@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Zad12</title>
+    <script src="https://cdn.plot.ly/plotly-3.0.1.min.js"></script>
+</head>
+
+<body>
+
+<button onclick="generateCars()">Generate Car Data</button>
+<div id="plot"></div>
+
+<script>
+    let cars = []
+
+    function generateCars() {
+        const numCars = prompt("Kolku koli?", 5)
+        cars = []
+
+        for (let i = 0; i < numCars; i++) {
+            const carBrand = prompt(`Vnesi brend broj ${i + 1}:`);
+            const speed = Math.floor(Math.random() * 201)
+            const acceleration = Math.floor(Math.random() * 11)
+            const fuelEfficiency = Math.floor(Math.random() * 51) + 20
+
+            car = {
+                brand: carBrand,
+                speed: speed,
+                acceleration: acceleration,
+                fuelEfficiency: fuelEfficiency,
+            }
+
+            cars.push(car)
+        }
+
+        generate3DPlot()
+    }
+
+    function generate3DPlot() {
+        const x = cars.map(car => car.speed)
+        const y = cars.map(car => car.acceleration)
+        const z = cars.map(car => car.fuelEfficiency)
+        const text = cars.map(car => `${car.brand}: Speed=${car.speed}, Acceleration=${car.acceleration}, Fuel Efficiency=${car.fuelEfficiency}`)
+
+        const colors = x.map(speed => speed < 50 ? 'red' : speed < 100 ? 'orange' : 'green')
+
+        const data = {
+            x: x,
+            y: y,
+            z: z,
+            mode: 'markers',
+            type: 'scatter3d',
+            marker: {
+                size: 10,
+                color: colors,
+                opacity: 0.7,
+            },
+            text: text,
+            hoverinfo: 'text',
+        };
+
+        Plotly.newPlot('plot', data);
+    }
+</script>
+
+</body>
+</html>

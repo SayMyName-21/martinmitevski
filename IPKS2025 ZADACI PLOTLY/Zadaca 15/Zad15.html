@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Zad13</title>
+    <script src="https://cdn.plot.ly/plotly-3.0.1.min.js"></script>
+</head>
+
+<body>
+
+Planet Name: <input type="text" id="planet-name">
+<br>
+Planet Color: <input type="text" id="planet-color">
+<br>
+Planet Size:
+<select id="planet-size">
+    <option value="small">Dwarf</option>
+    <option value="medium">Normal</option>
+    <option value="large">Giant</option>
+</select>
+<button onclick="addPlanet()">Add</button>
+<br><br>
+
+Star Name: <input type="text" id="star-name">
+<br>
+Star Color: <input type="text" id="star-color">
+<br>
+Star Size:
+<select id="star-size">
+    <option value="small">Dwarf</option>
+    <option value="medium">Normal</option>
+    <option value="large">Giant</option>
+</select>
+<br>
+<br>
+
+
+<div id="plot"></div>
+<br>
+<button onclick="generateGraph()">Generate</button>
+
+<script>
+    planetCount = 0
+    planets = []
+    planetNames = []
+
+    function addPlanet() {
+        if (planetCount >= 9) return alert("premnogu planeti. 9 max")
+        planetName = document.getElementById("planet-name").value
+        planetColor = document.getElementById("planet-color").value
+        planetSize = document.getElementById("planet-size").value
+        if (planetNames.includes(planetName)) {
+            return alert("Veke postoi taa planeta")
+        }
+        planetNames.push(planetName)
+        planet = {name: planetName, color: planetColor, size: planetSize, distance: (planetCount + 1) * 10}
+        planets.push(planet)
+        planetCount++
+    }
+
+    function generateGraph() {
+        starName = document.getElementById('star-name').value
+        starColor = document.getElementById('star-color').value
+        starSize = document.getElementById('star-size').value
+
+        const dataStar = {
+            x: [0],
+            y: [0],
+            mode: 'markers',
+            type: 'scatter',
+            marker: {
+                size: starSize === 'small' ? 20 : starSize === 'medium' ? 40 : 60,
+                color: starColor || 'yellow',
+            },
+            name: starName || 'Sun',
+        }
+
+        const dataPlanets = {
+            x: planets.map(planet => planet.distance),
+            y: 0,
+            mode: 'markers',
+            type: 'scatter',
+            marker: {
+                size: planets.map(planet => planet.size === 'dwarf' ? 10 : planet.size === 'small' ? 15 : planet.size === 'medium' ? 20 : planet.size === 'large' ? 25 : 30),
+                color: planets.map(planet => planet.color || 'blue'),
+                opacity: 0.7,
+            },
+            text: planets.map(planet => planet.name),
+            name: 'Planets',
+        }
+
+
+        const data = [dataStar, dataPlanets]
+
+        Plotly.newPlot("plot", data)
+    }
+</script>
+
+</body>
+</html>
+</title>
+</head>
+<body>
+
+</body>
+</html>

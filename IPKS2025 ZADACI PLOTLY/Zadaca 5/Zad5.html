@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Zad1</title>
+    <script src="https://cdn.plot.ly/plotly-3.0.1.min.js"></script>
+</head>
+
+<body>
+
+Name: <input type="text" id="name"><br>
+Number of People: <input type="text" id="number">
+<br>
+<button onclick="genGraph()">Add</button>
+
+
+<div id="plot"></div>
+
+</body>
+
+<script>
+    let people = []
+    let numbers = []
+
+    function genGraph(){
+        if(!people.includes(document.getElementById("name").value)) {
+            people.push(document.getElementById("name").value)
+            numbers.push(document.getElementById("number").value)
+            console.log(people)
+        }
+        else{
+            return alert("Veke postoi imeto na grafot")
+        }
+
+        const graph = [{
+            x: people,
+            y: numbers,
+            type: "bar"
+        }];
+
+        Plotly.newPlot("plot", graph);
+    }
+
+
+
+
+
+</script>
+</html>

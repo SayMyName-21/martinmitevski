@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Zadtest</title>
+    <script src="https://cdn.plot.ly/plotly-3.0.1.min.js"></script>
+</head>
+
+<body>
+
+Mountain Name: <input type="text" id="mountain-name">
+<button onclick="generateMountainData()">Generate</button>
+
+<div id="plot"></div>
+
+<script>
+    mountains = []
+    count = 0
+    
+    function generateMountainData() {
+        mountainName = document.getElementById("mountain-name").value
+
+        rows = 5
+        cols = 5
+        z_data = []
+
+        for (let i = 0; i < rows; i++) {
+            z_data[i] = []
+            for (let j = 0; j < cols; j++) {
+                z_data[i].push(Math.floor(Math.random() * 5001))
+            }
+        }
+
+        const data = [{
+            z: z_data,
+            type: 'surface',
+            colorscale: 'Viridis'
+        }]
+
+        const layout = {
+            title:{text: mountainName},
+            autosize: true,
+            width: 800,
+            height: 600,
+            margin: {
+                l: 65,
+                r: 50,
+                b: 65,
+                t: 90,
+            }
+        }
+
+        appendix = document.createElement("div")
+        appendix.id = `${count}`
+
+        document.getElementById("plot").append(appendix)
+
+        Plotly.newPlot(`${count}`, data, layout)
+        count++
+    }
+</script>
+
+</body>
+</html>

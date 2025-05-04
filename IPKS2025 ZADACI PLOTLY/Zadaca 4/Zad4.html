@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.plot.ly/plotly-3.0.1.min.js"></script>
+</head>
+
+<body>
+
+<form>
+    <input type="radio" id="hor" name="option" value="horizontal">
+    <label for="hor">Horizontal bar chart</label><br>
+    <input type="radio" id="vert" name="option" value="vertical">
+    <label for="vert">Vertical bar chart</label><br>
+    <input type="radio" id="line" name="option" value="line">
+    <label for="line">Line graph</label>
+</form>
+
+<button onclick="generateGraph()">Generate</button>
+
+<div id="plot"></div>
+
+</body>
+
+<script>
+    let string = "Audi A2.Volkswagen Golf 5.Mercedes W218 CLS.Toyota Aygo.Opel Corsa.Citroen C4.Dalorean.Honda Civic.Fiat Punto.Porsche 911;2001.2002.1948.2042.1840.2012.2024.3025.2102.1999"
+    let names = string.split(";")[0].split(".")
+    let years = string.split(";")[1].split(".")
+
+    function generateGraph() {
+        let option = ""
+        let radios = document.getElementsByTagName("input")
+
+        for (let radio of radios) {
+            if (radio.checked) {
+                option = radio.value
+            }
+        }
+        let data
+
+        if (option === "horizontal") {
+            data = [{
+                x: years,
+                y: names,
+                type: "bar",
+                orientation: "h"
+            }]
+        } else if (option === "vertical") {
+            data = [{
+                x: names,
+                y: years,
+                type: "bar",
+                orientation: "v"
+            }]
+        } else if (option === "line") {
+            data = [{
+                x: names,
+                y: years,
+                type: "lines",
+                mode: "scatter"
+            }]
+        } else {
+            return alert("Odberi edno.")
+        }
+
+        Plotly.newPlot("plot", data)
+    }
+</script>
+</html>

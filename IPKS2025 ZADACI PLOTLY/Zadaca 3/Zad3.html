@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.plot.ly/plotly-3.0.1.min.js"></script>
+</head>
+
+<body>
+
+<div id="plot"></div>
+
+</body>
+
+<script>
+    let string = "AAPL,MSFT,GOOG,AMZN,TSLA;219,392,169,201,272"
+    let names = string.split(";")[0].split(",")
+    let value = string.split(";")[1].split(",")
+
+
+    const data = [{
+        labels: names,
+        values: value,
+        type: "pie"
+    }]
+
+    Plotly.newPlot("plot", data);
+</script>
+</html>

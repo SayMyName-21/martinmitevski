@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Zad12</title>
+    <script src="https://cdn.plot.ly/plotly-3.0.1.min.js"></script>
+</head>
+
+<body>
+<select id="energySource" onchange="toggleVisibility()">
+    <option value="all">Show All</option>
+    <option value="solar">Solar</option>
+    <option value="wind">Wind</option>
+    <option value="hydro">Hydro</option>
+</select>
+
+<div id="plot"></div>
+
+<script>
+
+    const years = []
+    for (let year = 2015; year <= 2024; year++) {
+        years.push(year)
+    }
+
+    const solar = years.map(() => Math.floor(Math.random() * 51) + 50)
+    const wind = years.map(() => Math.floor(Math.random() * 51) + 50)
+    const hydro = years.map(() => Math.floor(Math.random() * 51) + 50)
+
+    const dataSolar = {
+        x: years,
+        y: solar,
+        stackgroup: 'one',
+        name: 'Solar',
+        type: 'scatter',
+        mode: 'lines',
+        line: { color: 'gold' },
+        visible: true
+    }
+
+    const dataWind = {
+        x: years,
+        y: wind,
+        stackgroup: 'one',
+        name: 'Wind',
+        type: 'scatter',
+        mode: 'lines',
+        line: { color: 'deepskyblue' },
+        visible: true
+    }
+
+    const dataHydro = {
+        x: years,
+        y: hydro,
+        stackgroup: 'one',
+        name: 'Hydro',
+        type: 'scatter',
+        mode: 'lines',
+        line: { color: 'mediumseagreen' },
+        visible: true
+    }
+
+    const data = [dataSolar, dataWind, dataHydro]
+
+    Plotly.newPlot("plot", data)
+
+    function toggleVisibility() {
+        const selection = document.getElementById('energySource').value
+            const visibleArray = [false, false, false]
+            if (selection === "all") {
+                for (let i = 0; i < 3; i++) {
+                    visibleArray[i] = true
+                }
+            }
+            if (selection === "solar") visibleArray[0] = true
+            if (selection === "wind") visibleArray[1] = true
+            if (selection === "hydro") visibleArray[2] = true
+
+            Plotly.update("plot",
+                {visible: [visibleArray[0], visibleArray[1], visibleArray[2]]},
+                {},
+                [0,1,2]
+            )
+        }
+
+</script>
+
+</body>
+</html>

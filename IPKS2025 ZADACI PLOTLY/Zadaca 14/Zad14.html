@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Zad14</title>
+    <script src="https://cdn.plot.ly/plotly-3.0.1.min.js"></script>
+</head>
+
+<body>
+
+<button onclick="startSimulation()">Start</button>
+<div id="plot"></div>
+
+<script>
+
+     prices = []
+     times = []
+     let intervalId
+     counter = 0
+     lastPrice = 100
+     datas = []
+
+    function startSimulation() {
+        if (intervalId) {
+            return
+        }
+
+        prices = [lastPrice]
+        times = [0]
+        counter = 0
+        datas = []
+
+        Plotly.newPlot("plot", [])
+
+        intervalId = setInterval(updateData, 1000)
+    }
+
+    function updateData() {
+        counter++
+         randomChange = (Math.random() - 0.5) * 2
+         newPrice = lastPrice + randomChange
+
+         newData = {
+            x: [counter - 1, counter],
+            y: [lastPrice, newPrice],
+            mode: "lines",
+            line: {
+                color: (newPrice > lastPrice) ? "green" : (newPrice < lastPrice) ? "red" : "gray",
+                width: 3
+            },
+            showlegend: false
+        }
+
+        datas.push(newData)
+
+        Plotly.addTraces("plot", newData)
+
+        prices.push(newPrice)
+        times.push(counter)
+        lastPrice = newPrice
+
+        if (counter >= 60) {
+            clearInterval(intervalId)
+            intervalId = null
+        }
+    }
+</script>
+
+</body>
+</html>

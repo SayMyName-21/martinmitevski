@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.plot.ly/plotly-3.0.1.min.js"></script>
+
+</head>
+
+<body>
+
+Brand: <input type="text" id="brand">
+<button onclick="Dodadi()">Add</button>
+<br><br>
+<button onclick="Generate()">Generate</button>
+
+<div id="plot"></div>
+
+<script>
+    brands = []
+    nets = []
+    colors = []
+    sum = 0
+    function Dodadi(){
+
+        if (brands.length >= 6)
+        {
+            return alert("6 e maksimum")
+        }
+
+        brand = document.getElementById("brand").value
+        if (brands.includes(brand))
+        {
+            return alert("veke postoi toj brend")
+        }
+        brands.push(brand)
+        net = Math.floor(Math.random() * (71) + 30)
+        nets.push(net)
+        sum += net
+    }
+
+    function Generate(){
+        if(brands.length !== 6)
+        {
+            return alert("Treba 6 brendovi da se vnesat")
+        }
+
+        for (let i = 0; i < 6; i++) {
+            if (nets[i] < sum / 6){
+                colors[i] = "magenta"
+            }
+            else{
+                colors[i] = "orange"
+            }
+        }
+
+
+        let data = [{
+            labels: brands,
+            values: nets,
+            type: 'pie',
+            marker: {
+                colors: colors
+            }
+        }]
+
+        Plotly.newPlot("plot", data)
+
+
+    }
+
+</script>
+</body>
+</html>

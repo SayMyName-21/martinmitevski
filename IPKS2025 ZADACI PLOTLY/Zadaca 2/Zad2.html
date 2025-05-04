@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.plot.ly/plotly-3.0.1.min.js"></script>
+</head>
+
+<body>
+
+<div id="plot"></div>
+
+<script>
+
+    const values = Array.from({length: 500}, () => Math.random());
+
+    const data = [{
+        x: values,
+        type: 'histogram',
+        marker: {
+            color: 'green'
+        }
+    }];
+
+    Plotly.newPlot("plot", data);
+</script>
+</body>
+</html>
