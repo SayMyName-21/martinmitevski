@@ -1,10 +1,8 @@
-Potrebno e da se napravi bar chart. Se vnesuvaat iminja na trkac od input pole, za sekoj trkac se generira random vrednost za vreme
-od 500 do 1200 i se dodava na chartot so kopce Add.
+Вие сте организатор на олимписките игри. На вашата емисија треба да се прикаже интересен граф за преформансите на тркачите.
 
-Po dodavanje na 10 trkaci, dokolku zbirot na vrednostite na trkacite e pogolemo ili ednakvo na 10000, togas grafot ke e zelen i
-vertikalen, a dokolku e pomal od 10000, togas grafikot ke e crven i horizontalen.
+Имате JSON фајл со имиња и времинња на неколку тркачи. Потребно е податоците да се постават во столбест дијаграм. Но имате идеа.
+Сакате графот да биде различен во зависност од преформансите на тркачите. Доколку сумата на нивните времиња е поголема или еднкква на 10000
+графот е зелен и вертикален, а во спротивно е црвен и хоризонтален
 
-X oskata da e oznacena kako "Ime na trkac", a Y oskata "Vreme vo milisekundi". Podatocite na x oskata da bidat so zolta boja, a
-podatocite na y oskata da bidat so plava boja.
-
-Da se potencira deka grafot ne treba da se pojavi pred 10 iminja
+Х оската треба да е означена како "Ime na trkac", a Y оската "Vreme vo milisekundi". Податоците на х оската треба да се со жолта боја,
+а на У со сина.
