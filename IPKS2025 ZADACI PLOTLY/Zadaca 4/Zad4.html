@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Car Charts</title>
     <script src="https://cdn.plot.ly/plotly-3.0.1.min.js"></script>
 </head>
 
@@ -17,18 +17,29 @@
     <label for="line">Line graph</label>
 </form>
 
-<button onclick="generateGraph()">Generate</button>
+<button type="button" onclick="generateGraph()">Generate</button>
 
 <div id="plot"></div>
 
-</body>
-
 <script>
-    let string = "Audi A2.Volkswagen Golf 5.Mercedes W218 CLS.Toyota Aygo.Opel Corsa.Citroen C4.Dalorean.Honda Civic.Fiat Punto.Porsche 911;2001.2002.1948.2042.1840.2012.2024.3025.2102.1999"
-    let names = string.split(";")[0].split(".")
-    let years = string.split(";")[1].split(".")
+    let cars = []
+    let names = []
+    let years = []
+
+    fetch("cars.json")
+        .then(response => response.json())
+        .then(data => {
+            cars = data
+            names = cars.map(car => car.name)
+            years = cars.map(car => car.year)
+        })
+        .catch(error => console.error("Error", error))
 
     function generateGraph() {
+        if (cars.length === 0) {
+            return alert("JSON ne e loadiran!")
+        }
+
         let option = ""
         let radios = document.getElementsByTagName("input")
 
@@ -37,6 +48,7 @@
                 option = radio.value
             }
         }
+
         let data
 
         if (option === "horizontal") {
@@ -50,15 +62,14 @@
             data = [{
                 x: names,
                 y: years,
-                type: "bar",
-                orientation: "v"
+                type: "bar"
             }]
         } else if (option === "line") {
             data = [{
                 x: names,
                 y: years,
-                type: "lines",
-                mode: "scatter"
+                type: "scatter",
+                mode: "lines+markers"
             }]
         } else {
             return alert("Odberi edno.")
@@ -67,4 +78,5 @@
         Plotly.newPlot("plot", data)
     }
 </script>
+</body>
 </html>
