@@ -1,9 +1,8 @@
-Na korisnikot treba da se dade prompt vo koj sto vnesuva 4 vrednosti oddeleni so prazno mesto.
-Ne se proveruva dali vrednostite se validni ili ne.
+Вие сте маркетинг агент кој има цел да долови на газдите на компанија за балони дека вашите сервиси ќе предизвикаат
+поголеми профити. 
 
-Potoa, vrednostite treba da se vnesat vo bar chart kade x vrednostite se godinite od 2020 do 2023,
-a y se vnesenite vrednosti.
+Потребно е преку тастатура да внесете 4 вредности за продажби во годините од 2020 до 2023, со тоа што бројот на продадени балони ќе биде
+претставено со у оската, а годините на х.
 
-X oskata da e oznacena kako "Godini", a Y oskata da e oznacena kako "Baloni"
+Нека се прикаже на столбест дијаграм.
 
-Neka se prikaze grafot kako bar chart.
