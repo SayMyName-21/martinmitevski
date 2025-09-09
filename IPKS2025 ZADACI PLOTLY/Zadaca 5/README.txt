@@ -1,6 +1,8 @@
-Treba da se napravat dve input polinja, edno kade ke se vnesuvaat iminja na lugje
-i vtoro kade ke se vnesuva broj na lugje so toa ime.
+Како агент за попис на население, потребно е рачно да внесете податоци за број на население категоризирано по име. 
 
-Ne smee da se vnese ime koe veke postoi.
+Треба да се направат две input полиња, едно каде ќе се внесуваат имиња на луѓе
+и второ каде ќе се внесува број на луѓе со тоа име.
 
-So klik na kopce da se generira i dodava ime na bar chart.
+Со клик на копче да се генерира и додава име на столбестиот дијаграм.
+
+Не смее да се внесе име кое веќе постои.
