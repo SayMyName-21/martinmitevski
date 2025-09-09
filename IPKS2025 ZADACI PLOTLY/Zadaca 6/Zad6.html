@@ -41,6 +41,11 @@ Number of Flights: <input type="text" id="flight">
             y: flights,
             mode: 'markers',
             type: 'scatter'
+            marker: {
+            size: flights.map(f => f), // size proportional to number of flights
+            sizemode: 'area',
+            sizeref: 2
+        }
         }];
 
         var layout = {
@@ -60,4 +65,5 @@ Number of Flights: <input type="text" id="flight">
 
 
 </html>
+
 
