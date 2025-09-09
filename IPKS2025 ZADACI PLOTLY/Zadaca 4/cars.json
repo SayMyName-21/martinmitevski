@@ -1,0 +1,12 @@
+[
+    { "name": "Audi A2", "year": 2001 },
+    { "name": "Volkswagen Golf 5", "year": 2002 },
+    { "name": "Mercedes W218 CLS", "year": 1948 },
+    { "name": "Toyota Aygo", "year": 2042 },
+    { "name": "Opel Corsa", "year": 1840 },
+    { "name": "Citroen C4", "year": 2012 },
+    { "name": "Dalorean", "year": 2024 },
+    { "name": "Honda Civic", "year": 3025 },
+    { "name": "Fiat Punto", "year": 2102 },
+    { "name": "Porsche 911", "year": 1999 }
+]
