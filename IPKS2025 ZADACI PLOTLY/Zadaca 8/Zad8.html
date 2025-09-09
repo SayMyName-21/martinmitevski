@@ -8,63 +8,58 @@
 
 <body>
 
-Name: <input type="text" id="name">
-<button onclick="Add()">Add</button>
-
 <div id="plot"></div>
 
 </body>
 <script>
+    fetch('racers.json')
+        .then(response => response.json())
+        .then(racers => {
+            const names = racers.map(r => r.name);
+            const times = racers.map(r => r.time);
+            let sum = times.reduce((a, b) => a + b, 0);
 
-    names = []
-    times = []
-
-    function Add() {
-
-        name = document.getElementById("name").value
-        names.push(name)
-        times.push(Math.floor(Math.random() * (1200 - 500 + 1)) + 500)
-
-        let sum = times.reduce((a, b) => a + b, 0)
-
-        let layout = {
-            xaxis: {
-                title: "Ime na trkac",
-                tickfont: {color: "yellow"},
-            },
-            yaxis: {
-                title: {text: "Vreme vo milisekundi"},
-                tickfont: {color: "blue"},
-            },
-            barmode: 'group',
-        }
-
-        let color
-
-        if (names.length >= 10) {
-            if (sum >= 10000) {
-                layout.bargap = 0.2
-                layout.barmode = 'stack'
-                layout.orientation = 'v'
-                color = "green"
-            } else {
-                layout.orientation = 'h'
-                color = "red"
+            let layout = {
+                xaxis: {
+                    title: "Ime na trkac",
+                    tickfont: {color: "yellow"},
+                },
+                yaxis: {
+                    title: {text: "Vreme vo milisekundi"},
+                    tickfont: {color: "blue"},
+                },
+                barmode: 'group',
             }
 
-            let data = [{
-                x: names,
-                y: times,
-                type: 'bar',
-                marker: {
-                    color: color
-                },
-                orientation: (layout.orientation === 'h') ? 'h' : 'v'
-            }];
+            let color;
 
-            Plotly.newPlot('plot', data, layout)
-        }
-    }
+            if (names.length >= 10) {
+                if (sum >= 10000) {
+                    layout.bargap = 0.2
+                    layout.barmode = 'stack'
+                    layout.orientation = 'v'
+                    color = "green"
+                } else {
+                    layout.orientation = 'h'
+                    color = "red"
+                }
+
+                let data = [{
+                    x: names,
+                    y: times,
+                    type: 'bar',
+                    marker: {
+                        color: color
+                    },
+                    orientation: (layout.orientation === 'h') ? 'h' : 'v'
+                }];
+
+                Plotly.newPlot('plot', data, layout)
+            }
+        })
+        .catch(error => {
+            console.error('Error loading JSON:', error);
+        });
 </script>
 
 </html>
