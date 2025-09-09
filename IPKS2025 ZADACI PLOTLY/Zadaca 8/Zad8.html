@@ -33,7 +33,6 @@
 
             let color;
 
-            if (names.length >= 10) {
                 if (sum >= 10000) {
                     layout.bargap = 0.2
                     layout.barmode = 'stack'
@@ -58,8 +57,9 @@
             }
         })
         .catch(error => {
-            console.error('Error loading JSON:', error);
+            console.error('Error', error);
         });
 </script>
 
 </html>
+
