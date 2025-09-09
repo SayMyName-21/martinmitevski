@@ -52,7 +52,7 @@ Name: <input type="text" id="name">
                 color = "red"
             }
 
-            let data = {
+            let data = [{
                 x: names,
                 y: times,
                 type: 'bar',
@@ -60,10 +60,11 @@ Name: <input type="text" id="name">
                     color: color
                 },
                 orientation: (layout.orientation === 'h') ? 'h' : 'v'
-            }
+            }];
 
             Plotly.newPlot('plot', data, layout)
         }
     }
 </script>
+
 </html>
