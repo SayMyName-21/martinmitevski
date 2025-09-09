@@ -1,6 +1,8 @@
-Se vnesuvaat podatoci za godini i brojot na letovi taa godina vo dve input polinja.
+Работите на терминал во аеродром. Потребно ви е да внесувате колку летови имаат поминато годишно низ аеродромот.
+Секоја година се внесува само еднаш.
 
-Ne smee da se vnesi godina koja postoi.
+Поради застарен хардвер и софтвер, базата на податоци ги подржува само годините од 2001 до 2030. Исто така,
+поради одредени закони и прописи, минималниот број на летови кој еден аеродром треба да ги има годишно за да 
+продолжи да финкционира е 13.
 
-Treba da se validiraat podatocite, so toa sto treba da se proveri dali godinite se vo rang od 2001 do 2030,
-i treba brojot na letovi da e nad 13. Sekoj podatok mora da e broj. Da ima kopce za generiranje na bubble chart.
+Да се претстават податоците во bubble дијаграм.
