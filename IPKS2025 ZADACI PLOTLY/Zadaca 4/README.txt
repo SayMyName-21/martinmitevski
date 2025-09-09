@@ -1,8 +1,6 @@
-Dadeni se 10 avtomobili i nivnite godini na produkcija (podatocite ne se tocni i sluzat samo kako primer):
+Вие сте колекционер на автомобили, и во колекцијата имате сега за сега 10. Автомобилите и нивните податоци ги имате зачувано во JSON фајл.
+Со цел да можете полесно да се фалите на вашите пријатели, сакате да ги поставите годините на производство на секој автомобил што го имате во дијаграм.
 
-Audi A2.Volkswagen Golf 5.Mercedes W218 CLS.Toyota Aygo.Opel Corsa.Citroen C4.Dalorean.Honda Civic.Fiat Punto.Porsche 911;2001.2002.1948.2042.1840.2012.2024.3025.2102.1999
+Неможете да се одлучите за тоа каков дијаграм, па треба да има опција за хоризонтален столбест, вертикален столбест и линиски дијаграм.
 
-Otkoga ke se isparsiraat podatocite, treba da se odberi od radio meni dali da bidat prikazeni samite podatoci
-vo horizontalen bar chart, vertikalen bar chart, ili line graph.
-
-So kopce da se generira graf.
+Со копче да се генерира графот.
