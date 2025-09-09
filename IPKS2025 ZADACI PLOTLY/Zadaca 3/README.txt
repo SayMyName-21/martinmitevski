@@ -1,6 +1,4 @@
-Daden vi e sledniot string od podatoci za iminja i ceni na akcii:
+Вие сте брокер кои треба да му објасни на својот клиент како моментално циркулираат цените на берза. 
+Со некоја причина, цените се замрзнати, имате време да ги поставите на дијаграм за анализа.
 
-AAPL,MSFT,GOOG,AMZN,TSLA;219,392,169,201,272
-
-Potrebno e da se isparsira stringot taka sto imeto na akcijata ke e AAPL, a cenata ke e 219.
-Otkoga se isparsiraat, potrebno e da se postavat vo pie chart.
+Откога ќе ги испарсирате податоците, автоматски треба да се стават во пита дијаграм.
