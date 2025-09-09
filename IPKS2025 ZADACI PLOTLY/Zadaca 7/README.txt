@@ -1,7 +1,10 @@
-Potrebno e da se vnesuvaat brendovi preku input pole. Za sekoj brend se generiraat random vrednosti od 30 do 100 za net-worth.
+Ставени сте во позиција на финансиски уредувач на богат човек. На кој било бренд и да помислите, тоа е негово.
+Тој сака да ликвидира повеќе брендови во еден мега бренд. Потребен е начин да се селектираат најуспешните за полесна анализа.
 
-Grafot e pie chart, i ne se generira se dodeka ne se vneseni tocno 6 brendovi i se klikne kopceto generate. Po klikanje na generate,
-ne smeat da se dodavaat povekje brendovi i 6 e maksimumot. Za sekoj brend vazi slednoto:
+Идеата е да се има поле за внесување на име на бренд, па автоматски системот ќе го израчуна net-worthot на самиот бренд и ќе се додаде во база.
+Максималниот број на внесени брендови кои системот може да ги поддржи во даден момент е 6. Треба да се генерира пита граф, со тоа што само
+ќе може да се генерира доколку се веќе внесени 6 брендови.
 
-Dokolku brendot zafakja pomalku od 16 procenti od grafot, togas bojata treba da mu e magenta, a dokolku ako zafakja povekje
-ili ednakvo, togas neka bide portokalova boja.
+Сега, за анализата. Имате заклучено дека ќе е најефикасно доколку на графот, сите брендови кои зафаќаат помалку од 16 проценти од збирот на
+net-worth на сите 6 брендови да бидат означени со магента боја, а тие што зафаќаат повеќе да бидат означени со портокалова.
+
