@@ -36,11 +36,12 @@ Number of Flights: <input type="text" id="flight">
         years.push(document.getElementById("year").value)
         flights.push(document.getElementById("flight").value)
 
-        const data = {
+        const data = [{
             x: years,
             y: flights,
             mode: 'markers',
-        };
+            type: 'scatter'
+        }];
 
         var layout = {
             title: {
@@ -56,5 +57,6 @@ Number of Flights: <input type="text" id="flight">
     }
 
 </script>
+
 
 </html>
