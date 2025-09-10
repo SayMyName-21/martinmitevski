@@ -1,0 +1,32 @@
+[
+  {
+    "brand": "Toyota",
+    "speed": 120,
+    "acceleration": 7,
+    "fuelEfficiency": 35
+  },
+  {
+    "brand": "Ford",
+    "speed": 90,
+    "acceleration": 5,
+    "fuelEfficiency": 40
+  },
+  {
+    "brand": "BMW",
+    "speed": 150,
+    "acceleration": 8,
+    "fuelEfficiency": 30
+  },
+  {
+    "brand": "Honda",
+    "speed": 110,
+    "acceleration": 6,
+    "fuelEfficiency": 38
+  },
+  {
+    "brand": "Tesla",
+    "speed": 180,
+    "acceleration": 10,
+    "fuelEfficiency": 45
+  }
+]
