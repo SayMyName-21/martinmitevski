@@ -15,9 +15,6 @@
     let cars = []
 
     function generateCars() {
-        const numCars = prompt("Kolku koli?", 5)
-        cars = []
-
         fetch("cars.json")
             .then(response => response.json())
             .then(data => {
@@ -25,10 +22,8 @@
                 generate3DPlot();
             })
             .catch(error => console.error("Error", error));
-        }
-
-        generate3DPlot()
     }
+    
 
     function generate3DPlot() {
         console.log(cars)
@@ -69,6 +64,7 @@
 
 </body>
 </html>
+
 
 
 
