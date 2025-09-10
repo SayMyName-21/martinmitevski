@@ -45,7 +45,7 @@
 
         const colors = x.map(speed => speed < 50 ? 'red' : speed < 100 ? 'orange' : 'green')
 
-        const data = {
+        const data = [{
             x: x,
             y: y,
             z: z,
@@ -58,7 +58,7 @@
             },
             text: text,
             hoverinfo: 'text',
-        };
+        }];
 
         Plotly.newPlot('plot', data);
     }
@@ -66,3 +66,4 @@
 
 </body>
 </html>
+
