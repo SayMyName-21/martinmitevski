@@ -76,7 +76,7 @@ Star Size:
         }
 
         const dataPlanets = {
-            x: 0,
+            x: planets.map(planet => planet.distance),
             y: 0,
             mode: 'markers',
             type: 'scatter',
@@ -105,3 +105,4 @@ Star Size:
 </body>
 
 </html>
+
