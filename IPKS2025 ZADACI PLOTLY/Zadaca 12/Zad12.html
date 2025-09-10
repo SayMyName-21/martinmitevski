@@ -61,12 +61,22 @@
             hoverinfo: 'text',
         }];
 
-        Plotly.newPlot('plot', data);
+           const layout = {
+        margin: { l: 0, r: 0, b: 0, t: 0 },
+        scene: {
+            xaxis: { title: 'Speed' },
+            yaxis: { title: 'Acceleration' },
+            zaxis: { title: 'Fuel Efficiency' }
+        }
+    };
+
+        Plotly.newPlot('plot', data, layout);
     }
 </script>
 
 </body>
 </html>
+
 
 
 
