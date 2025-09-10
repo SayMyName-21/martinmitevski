@@ -1,6 +1,7 @@
-Da se generiraat prodazbi za sekoj mesec kaj kompaniite Amstel i Heineken. Potrebno e da se postavat vo grouped bar chart.
+Вие сте некој натприроден бог на пивото. Ја сакате моќта да го промените бројот на продажби кај Amstel и Heineken.
 
-Potoa, potrebno e da moze da se azuriraat dopolnitelno prodazbite za odreden mesec na nekoja od kompaniite.
+Со оваа цел се генерира вертикален столбест граф кој ги содржи месечните приходи на двете компании, од јануари до декември.
+Amstel нека е означено со портокалова, а Heineken со зелена боја.
 
-Ova treba da se dostigne so koristenje na select meni za izbor na mesec i kompanija, kako i number input pole za vnesuvanje
-nova cena
+Сега, со помош на мени треба да може да се одбери месец и компанија, па со внесување на вредност да се ажурираат продажбите за
+тој месец во самиот граф.
