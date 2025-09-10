@@ -1,8 +1,7 @@
-Potrebno e za godini od 2015 do 2024 da se generiraat vrednosti za proizvodstvoto na energija od tri razlicni
-izvori (solarna energija, energija od vetar i energija od voda). Vrednostite se od 50 do 100.
+Вие сте вработени во енергетскиот сектор, и сте задолжени да покажете преформанси на различни видови на енергијa, имено
+соларна енергија, енергија од ветер и енергија од вода.
 
-Potoa treba da se zemat podatocite i da se postavat vo stacked area graph, taka sto solarnata energija ke bide na najnisko nivo,
-od vetarot ke bide na sredno a energijata od vodata ke bide na najvisoko. Solarnata ke bide so zolta boja,
-vetarot so plava, a vodata so zelena.
+Да се постават податоците во stacked area граф, така што соларната енергија ќе е на најниско ниво и ќе е жолта,
+од ветерот ќе биде на средина и ќе е сина, а од водата ќе биде највисоко и ќе е зелена.
 
-Potrebno e preku selection meni da moze da se izbira dali da se gledaat site areas posebno, ili sekoe posebno.
+Потребно е и да може да се избира кои статистики самостојно да се гледаат, или пак да може сите наеднаш.
