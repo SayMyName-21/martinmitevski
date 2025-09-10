@@ -18,20 +18,13 @@
         const numCars = prompt("Kolku koli?", 5)
         cars = []
 
-        for (let i = 0; i < numCars; i++) {
-            const carBrand = prompt(`Vnesi brend broj ${i + 1}:`);
-            const speed = Math.floor(Math.random() * 201)
-            const acceleration = Math.floor(Math.random() * 11)
-            const fuelEfficiency = Math.floor(Math.random() * 51) + 20
-
-            car = {
-                brand: carBrand,
-                speed: speed,
-                acceleration: acceleration,
-                fuelEfficiency: fuelEfficiency,
-            }
-            console.log(cars)
-            cars.push(car)
+        fetch("cars.json")
+            .then(response => response.json())
+            .then(data => {
+                cars = data;
+                generate3DPlot();
+            })
+            .catch(error => console.error("Error", error));
         }
 
         generate3DPlot()
@@ -76,6 +69,7 @@
 
 </body>
 </html>
+
 
 
 
