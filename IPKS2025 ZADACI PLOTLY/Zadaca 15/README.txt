@@ -1,11 +1,11 @@
-Preku input polinja za tekst se vnesuvaat ime i boja na planeta, a preku select meni se odbira golemina (S,M,L).
-Treba da ima kopce za dodavanje na taa planeta vo solarniot sistem (max 9)
+Преку input полиња за текст се внесуваат име и боја на планета, а преку select мени се одбира големина (S, M, L).
+Треба да има копче за додавање на таа планета во соларниот систем (максимум 9).
 
-Po dodavanje na proizvolen (i dozvolen) broj na planeti, potrevno e da se vnesat i informacii za dzvezda vo ist format.
-Pod polinjata za dzvezda da ima kopce Generate so koe ke se sozdade scatter bubble chart na koi ke bide reprezentiran
-solarniot sistem, so dzvezdata na najleva pozicija, i drugite planeti po redosled na vnesuvanje na desno. Site se naogjaat na
-ista y vrednost.
+По додавање на произволен (и дозволен) број на планети, потребно е да се внесат и информации за ѕвезда во ист формат.
+Под полињата за ѕвезда да има копче „Генерирај“ со кое ќе се создаде scatter bubble chart на кој ќе биде репрезентиран
+соларниот систем, со ѕвездата на најлева позиција, и другите планети по редослед на внесување надесно. Сите се наоѓаат на
+иста y-вредност.
 
-Treba sekoe astronomsko telo da ima relativno ednakva oddalecenost edno od drugo.
+Треба секое астрономско тело да има релативно еднаква оддалеченост едно од друго.
 
-Default za boja na dzvezda e zolta, a na planeta plava.
+Default за боја на ѕвезда е жолта, а на планета е сина.
