@@ -1,6 +1,6 @@
-Potrebno e da se vnesat informacii za najmalku dve iminja na igri preku prompt, a vrednostite za prodazbi vo godinata na sekoja igra
-da se generira random. Da se sozdade pie chart od informaciite.
+Вие сте организатор на gaming турнир, но не сте сигурни која игра е најпопуларна, па да ја вклучите во турнирот.
 
-Otkoga ke se generira grafot, treba da ima input pole kade ke se vnese imeto na nekoja igra, i so klikanje na kopce da se izbrise
-taa igra od pie chart grafot, ili da se dodade nova unikatna igra. Dokolku ima ostanato samo dve ili pomalku igri i se obidi brisenje,
-togas treba da pusti error deka ne e vozmozno da se izbrise igrata.
+Потребно е на почеток да се внесат информации за најмалку две имиња на игри преку prompt, а вредностите за продажби во годината на секоја игра 
+да се генерираат по случаен избор. Да се создаде pie chart од информациите.
+
+Откако ќе се генерира графиконот, треба да има input поле каде ќе се внесе името на некоја игра, и со кликнување на копче да се избрише таа игра од pie chart графиконот, или да се додаде нова уникатна игра. Доколку има останато само две или помалку игри и се обиде бришење, тогаш треба да пушти грешка дека не е возможно да се избрише играта.
