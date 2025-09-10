@@ -1,7 +1,8 @@
-Potrebno e da vo text input pole da se vnesuvaat iminja na planina. So kopce generate, treba da se formira nova planina so toa ime
-i da se prikaze vo 3D surface plot. Pri generiranje na plot, prethodniot ne treba da se overridnuva, tuku da se sozdade
-sosem nov plot.
+Ставени сте во позиција на планинолог. Потребен е систем за прикажување на планински гребени со цел за полесно истражување.
 
-Potrebno e plotot na planinata da se ispolni vo 5x5 grid.
+Сметате дека ова најлесно ќе биде со 3D површински граф. Треба да се внесе име на планина, и при кликање на копче,
+да се генерира сосем нов граф кој ја прикажува планината.
 
-Visinata na planinite treba da ode od 0 do 5000 metri. Moze da se koristi bilo kakov colorscale.
+Поради хардверски ограничувања, може планините да се прикажат само во 5х5 поле.
+
+Планините достигнуваат максимална висина од 5000 метри, а минимална од 0. 
