@@ -1,9 +1,7 @@
-Potrebno e da se napravi simulacija na berza, so toa sto ke se sledi nekoja specificna akcija. Cenata na akcijata ke
-zapocne od 100 i potoa ke se inkrementira ili dekrementira za najmnogu 1 vo zivo sekoja sekunda.
+Потребно е да се направи симулација на берза, со тоа што ќе се следи некоја специфична акција.
+Цената на акцијата ќе започне од 100 и потоа ќе се инкрементира или декрементира за најмногу 1 во живо секоја секунда.
 
-Ova treba da se slucuva vo line chart graph koj ke se generira po klikanje na kopce Start.
+Ова треба да се случува во line chart график кој ќе се генерира по кликање на копче Start. Доколку цената на акцијата се зголеми од последната цена,
+тогаш треба тој сегмент да се обележи како зелен, ако се намали да се обележи како црвен, и ако е еднаков да е сив.
 
-Dokolku cenata na akcijata se zgolemi od poslednata cena, togas treba toj segment da se obelezi kako zelen, ako
-se namali da, se obelezi kako crven, i ako e ednakov da e siv
-
-Ova da se povtoruva da dostignuvanje na vreme od 60 sekundi.
+Ова да се повторува до достигнување на време од 60 секунди.
